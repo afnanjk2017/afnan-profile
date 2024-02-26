@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+
+{% if get_flashed_messages() %}
+
+      <div class="message">
+          {{ get_flashed_messages() | join(" ") }}
+      </div>
+
+{% endif %}
+
+
+<main>
+    <article>
+
+
+
+      <section class="contact" id="contact">
+        <div class="container">
+
+
+
+          <p class="section-text">
+            <br>Have any questions? Are you interested in hiring me?
+             <br>
+            I would love to hear from you! I will respond to you soon
+          </p>
+
+
+
+          <div class="contact-wrapper">
+
+            <form id="contact_form" action="" class="contact-form" method="post">
+
+              <div class="wrapper-flex">
+
+                <div class="input-wrapper">
+                  <label for="name">Name</label>
+
+                  <input type="text" name="name" id="name" placeholder="Enter Your Name" class="input-field">
+                </div>
+
+                <div class="input-wrapper">
+                  <label for="email">Email</label>
+
+                  <input type="email" name="email" id="email" placeholder="Enter Your Email"
+                    class="input-field">
+                </div>
+
+              </div>
+
+              <label for="message">Message</label>
+
+              <textarea name="message" id="message" placeholder="Type Your Message"
+                class="input-field"></textarea>
+
+              <button type="submit" class="btn btn-primary" onclick="msg();" >
+                <span>Send Message</span>
+                <ion-icon name="paper-plane-outline"></ion-icon>
+              </button>
+
+            </form>
+
+
+
+
+            <ul class="contact-list">
+
+              <li>
+                <a href="mailto:afnanjk2017@gmail.com" class="contact-link">
+                  <i class="fa-solid fa-envelope"></i>
+
+
+                  <span>: Afnanjk2017@gmail.com</span>
+                </a>
+              </li>
+
+
+
+              <li>
+                <a href="tel:+0011234567890" class="contact-link">
+                  <i class="fa-solid fa-phone"></i>
+
+                  <span>: 001-865-964-458</span>
+                </a>
+              </li>
+
+
+
+              <li>
+                <a href="#" class="contact-link">
+                  <i class="fa-solid fa-location-dot"></i>
+
+                  <address>: Saudi Arabia, Buraydah .</address>
+                </a>
+              </li>
+
+            </ul>
+
+            <div class="list-icon">
+
+              <a href="https://www.linkedin.com" target="_blank" class="a-list">
+
+                <i class="fa-brands fa-linkedin fa-2x" style="color:hsl(185, 32%, 58%);"></i>              </a>
+
+              <a href="https://www.facebook.com" target="_blank" class="a-list">
+                <i class="fa-brands fa-facebook  fa-2x" style="color:hsl(185, 32%, 58%);"></i>
+              </a>
+
+              <a href="https://github.com" target="_blank" class="a-list">
+                <i class="fa-brands fa-github  fa-2x" style="color:hsl(185, 32%, 58%);"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+  <script>
+    function msg() {
+
+var el1 = document.getElementById('name');
+var el2 = document.getElementById('email');
+var el3 = document.getElementById('message');
+
+if(!el1.value || !el2.value || !el3.value){
+    alert('Please Fill All The Required Text!');
+    return;
+}
+
+document.getElementById('contact_form').submit();}
+  </script>
+
+
+
+
+{% endblock %}
